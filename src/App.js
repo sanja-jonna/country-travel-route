@@ -50,10 +50,14 @@ const countryDict = {
   "PAN": ["USA", "MEX", "GTM", "HND", "NIC", "CRI", "PAN"]
 };
 
-
 function App() {
   const classes = useStyles();
   const [countryCode, setCountryCode] = useState("");
+
+  function errorMessage() { 
+    alert("The country code that was entered is not recognized. Please re-enter the proper code! Valid country codes are the following: ");
+    setCountryCode({countryCode: ""});
+  }
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -63,8 +67,11 @@ function App() {
     for (let element in countryDict) { 
       if(countryCode == element) { 
         document.write(countryDict[countryCode]); 
-      }
+        return true; 
+      } 
     }
+
+    errorMessage(); 
   }
 
   return (
