@@ -20,8 +20,7 @@ const useStyles = makeStyles((theme) => ({
   },
   image: {
     backgroundSize: 'cover',
-    backgroundPosition: 'center',
-    // background: "country-travel-route/src/CountryMap.png"
+    backgroundPosition: 'center'
   },
   paper: {
     margin: theme.spacing(8, 4),
@@ -42,7 +41,13 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-// const myImg = require("./CountryMap.png");
+var countryDict = {
+  "Canada": ["USA"]
+};
+
+function handleOnChange(textInput) {
+  console.log(textInput);
+};
 
 function App() {
   const classes = useStyles();
@@ -52,7 +57,6 @@ function App() {
 
     <Grid container component="main" className={classes.root}>
       <CssBaseline />
-      {/* TODO: Modify image */}
       <Grid container item xs={false} sm={4} md={7} className={classes.image}>
         <img src={myImg} alt="countryMap" ></img>
       </Grid>
@@ -79,6 +83,7 @@ function App() {
             name="countryCode"
             autoComplete="countryCode"
             autoFocus
+            onChange={this.handleOnChange}
           />
 
           <Button
@@ -90,7 +95,7 @@ function App() {
           >
             Find Path To Destination
           </Button>
-          
+
         </form>
       </div>
     </Grid>
