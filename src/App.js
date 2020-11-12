@@ -55,7 +55,7 @@ function App() {
   const [countryCode, setCountryCode] = useState("");
 
   function errorMessage() { 
-    alert("The country code that was entered is not recognized. Please re-enter the proper code! Valid country codes are the following: ");
+    alert("The country code that was entered is not recognized. Please re-enter the proper code! Valid country codes are the following: CAN, USA, MEX, BLZ, GTM, SLV, HND, NIC, CRI, PAN");
     setCountryCode({countryCode: ""});
   }
 
@@ -120,7 +120,7 @@ function App() {
         </form>
 
         <h2 id = "countryTravelResult"> </h2>
-        
+
       </div>
     </Grid>
     </Grid>
