@@ -66,7 +66,7 @@ function App() {
 
     for (let element in countryDict) { 
       if(countryCode == element) { 
-        document.write(countryDict[countryCode]); 
+        document.getElementById("countryTravelResult").innerHTML = countryDict[countryCode]; 
         return true; 
       } 
     }
@@ -118,6 +118,9 @@ function App() {
           </Button>
 
         </form>
+
+        <h2 id = "countryTravelResult"> </h2>
+        
       </div>
     </Grid>
     </Grid>
